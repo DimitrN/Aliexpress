@@ -34,6 +34,8 @@ public class Web {
         driver.findElement(ui(fieldLocator)).sendKeys(value);
         //driver.findElement(ui(fieldLocator)).sendKeys(Keys.ENTER);
     }
+
+
     /**
      * Input Text
 
