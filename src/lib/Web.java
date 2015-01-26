@@ -1,6 +1,6 @@
 package lib;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
@@ -36,16 +36,31 @@ public class Web {
     }
 
 
-    /**
-     * Input Text
+    public void openSite(String siteAddress){
+        driver.get(siteAddress);
+    }
+    public void clickLink(String locator){
+        driver.findElement(By.linkText(locator)).click();
 
-    public void openSite();
-    public void clickLink();
-    public void isElementPresent(String elementLocator);
-    public void waitForElementPresent();
-    public void refresh();
-    public void isAlertPresent();
-     */
+    }
+    public boolean isElementPresent(String elementLocator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        return  (driver.findElement(ui(elementLocator)).isEnabled());
+    }
+    public void waitForElementPresent(String elementLocator){
+
+    }
+    public void refresh() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        driver.navigate().refresh();
+    }
+    public boolean isAlertPresent(){
+        try {
+            driver.switchTo().alert();
+            return true;
+        } catch (NoAlertPresentException NoAlertEx){
+            return false;
+        }
+    }
+
 
 
 

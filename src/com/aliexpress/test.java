@@ -21,13 +21,15 @@ public class test {
 
     @Test
     public void test1(){
-        driver.get("http://www.aliexpress.com/");
+        aliexpress.web.openSite("http://ru.aliexpress.com/category/202000104/laptops.html?g=y&pvId=19007-349873&shipCountry=ua&isrefine=y");
         aliexpress.main.checkPageTitle();
-        aliexpress.main.chengeLL();
+        System.out.println(driver.getTitle());
+        aliexpress.main.changeLL();
+
     }
 
     @After
     public void tearDown(){
-        driver.quit();
+        //driver.quit();
     }
 }
