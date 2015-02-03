@@ -39,8 +39,8 @@ public class Web {
     public void openSite(String siteAddress){
         driver.get(siteAddress);
     }
-    public void clickLink(String locator){
-        driver.findElement(By.linkText(locator)).click();
+    public void clickLink(String locator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        driver.findElement(ui(locator)).click();
 
     }
     public boolean isElementPresent(String elementLocator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {

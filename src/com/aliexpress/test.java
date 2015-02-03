@@ -24,8 +24,9 @@ public class test {
 
     @Test
     public void test1() throws ClassNotFoundException, IOException, InstantiationException, IllegalAccessException {
-        aliexpress.web.openSite("http://ru.aliexpress.com");
-        aliexpress.main.checkMainPageTitle();
+        aliexpress.web.openSite("http://www.aliexpress.com/");
+        aliexpress.main.changeSiteVersionToClobal();
+        /*aliexpress.main.checkMainPageTitle();
         aliexpress.main.changeCountry();
         aliexpress.main.checkLanguageChanging();
         aliexpress.web.openSite("http://us.ae.aliexpress.com/wsuser/buyerJoin/expressJoinIndex.htm?return=http%3A%2F%2Fru.aliexpress.com%2F%3Fspm%3Da2709.1681539.0.14");
@@ -35,7 +36,7 @@ public class test {
         aliexpress.web.openSite("http://news.alibaba.com/article/detail/help/100453670-1-alibaba.com-free-membership-agreement.html");
         aliexpress.membershipAgreement.checkAgreementPageTitle();
         driver.close();
-        driver.close();
+        driver.close();*/
 
 
 
@@ -48,6 +49,6 @@ public class test {
 
     @After
     public void tearDown(){
-        driver.quit();
+        //driver.quit();
     }
 }

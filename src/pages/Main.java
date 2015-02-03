@@ -1,6 +1,7 @@
 package pages;
 
 import junit.framework.Assert;
+import lib.Aliexpress;
 import lib.Web;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +15,7 @@ import static lib.ConfigData.ui;
  */
 public class Main {
     WebDriver driver;
+    Aliexpress aliexpress;
 
     public Main(WebDriver driver) {
         this.driver = driver;
@@ -27,6 +29,11 @@ public class Main {
             System.out.println("Main page link check failed");
             Assert.fail();
         }
+    }
+
+    public  void  changeSiteVersionToClobal () throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        driver.findElement(ui("CurrencyAndCountryChangeBlock")).click();
+        aliexpress.web.clickLink("ChangeSitetoClobalVersion");
     }
 
     public void changeCountry() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
